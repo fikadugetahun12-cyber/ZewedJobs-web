@@ -1,0 +1,28 @@
+#!/bin/bash
+# Convert SVG logos to PNG
+
+# Install ImageMagick if not installed
+# sudo apt-get install imagemagick  # Ubuntu/Debian
+# brew install imagemagick          # macOS
+
+echo "Converting SVG logos to PNG..."
+
+# Create output directory if it doesn't exist
+mkdir -p assets/logos
+
+# Convert each SVG to PNG
+convert -background transparent -resize 192x192 assets/logos/logo-192.svg assets/logos/logo-192.png
+convert -background transparent -resize 512x512 assets/logos/logo-512.svg assets/logos/logo-512.png
+convert -background transparent -resize 32x32 assets/logos/favicon.svg assets/logos/favicon.png
+convert -background transparent -resize 200x100 assets/logos/telebirr.svg assets/logos/telebirr.png
+convert -background transparent -resize 200x100 assets/logos/cbe.svg assets/logos/cbe.png
+convert -background transparent -resize 200x100 assets/logos/paypal.svg assets/logos/paypal.png
+convert -background transparent -resize 200x100 assets/logos/visa-mastercard.svg assets/logos/visa-mastercard.png
+
+# Create multiple sizes for icons
+convert -background transparent -resize 16x16 assets/logos/favicon.svg assets/logos/favicon-16x16.png
+convert -background transparent -resize 32x32 assets/logos/favicon.svg assets/logos/favicon-32x32.png
+convert -background transparent -resize 48x48 assets/logos/favicon.svg assets/logos/favicon-48x48.png
+convert -background transparent -resize 64x64 assets/logos/favicon.svg assets/logos/favicon-64x64.png
+
+echo "Logos converted successfully!"
