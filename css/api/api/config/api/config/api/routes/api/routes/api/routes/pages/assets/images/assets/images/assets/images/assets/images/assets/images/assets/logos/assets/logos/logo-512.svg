@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <!-- Background with gradient -->
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a365d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d3748;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="64" fill="url(#logoGradient)"/>
+  
+  <!-- Main Z Shape -->
+  <path d="M 128,144 L 384,144 L 128,368 L 384,368" 
+        fill="none" 
+        stroke="#ffffff" 
+        stroke-width="32" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+  
+  <!-- Inner circle -->
+  <circle cx="256" cy="256" r="96" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="16"/>
+  
+  <!-- Ethiopian colors pattern -->
+  <g transform="translate(256, 256)">
+    <!-- Green -->
+    <path d="M -160,0 A 160,160 0 0,1 160,0" 
+          fill="none" 
+          stroke="#078930" 
+          stroke-width="24" 
+          stroke-linecap="round"/>
+    <!-- Yellow -->
+    <path d="M 160,0 A 160,160 0 0,1 80,-138.56" 
+          fill="none" 
+          stroke="#fcdd09" 
+          stroke-width="24" 
+          stroke-linecap="round"/>
+    <!-- Red -->
+    <path d="M 80,-138.56 A 160,160 0 0,1 -80,-138.56" 
+          fill="none" 
+          stroke="#da121a" 
+          stroke-width="24" 
+          stroke-linecap="round"/>
+  </g>
+  
+  <!-- Dot accents -->
+  <circle cx="128" cy="128" r="8" fill="#ffffff" opacity="0.5"/>
+  <circle cx="384" cy="128" r="8" fill="#ffffff" opacity="0.5"/>
+  <circle cx="128" cy="384" r="8" fill="#ffffff" opacity="0.5"/>
+  <circle cx="384" cy="384" r="8" fill="#ffffff" opacity="0.5"/>
+  
+  <!-- ZEWED text -->
+  <text x="256" y="440" 
+        text-anchor="middle" 
+        fill="#ffffff" 
+        font-family="Arial, sans-serif" 
+        font-size="32" 
+        font-weight="bold"
+        letter-spacing="2">
+    ZEWED
+  </text>
+</svg>
