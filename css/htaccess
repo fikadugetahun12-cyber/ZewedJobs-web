@@ -1,0 +1,221 @@
+# Zewed AI Career Assistant - Apache Configuration
+# Version: 1.0.0
+
+# Enable rewrite engine
+RewriteEngine On
+
+# Force HTTPS (uncomment in production)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# Remove trailing slashes
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [R=301,L]
+
+# Custom error pages
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html
+ErrorDocument 503 /offline.html
+
+# Security Headers
+<IfModule mod_headers.c>
+    # XSS Protection
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # Prevent MIME type sniffing
+    Header set X-Content-Type-Options "nosniff"
+    
+    # Referrer Policy
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Permissions Policy
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    
+    # Content Security Policy
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.zewed.career;"
+    
+    # Feature Policy
+    Header set Feature-Policy "geolocation 'none'; microphone 'none'; camera 'none'"
+    
+    # HSTS (uncomment in production)
+    # Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
+
+# Compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+    AddOutputFilterByType DEFLATE application/xml application/xhtml+xml application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+    Header append Vary User-Agent
+</IfModule>
+
+# Cache Control
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # Images
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    
+    # CSS, JavaScript
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/x-javascript "access plus 1 month"
+    
+    # Fonts
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+    
+    # HTML
+    ExpiresByType text/html "access plus 1 hour"
+    
+    # Manifest
+    ExpiresByType application/manifest+json "access plus 1 week"
+    
+    # Other
+    ExpiresByType text/xml "access plus 1 hour"
+    ExpiresByType application/xml "access plus 1 hour"
+    ExpiresByType application/json "access plus 0 seconds"
+</IfModule>
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(jpg|jpeg|png|gif|svg|webp|ico)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
+    
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "public, max-age=3600"
+    </FilesMatch>
+    
+    <FilesMatch "\.(woff|woff2|ttf|otf)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    
+    <FilesMatch "manifest\.json$">
+        Header set Cache-Control "public, max-age=604800"
+    </FilesMatch>
+</IfModule>
+
+# MIME Types
+AddType application/manifest+json .webmanifest
+AddType application/x-web-app-manifest+json .webapp
+AddType font/woff2 .woff2
+AddType image/svg+xml .svg
+AddType image/webp .webp
+
+# Prevent access to sensitive files
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|inc|bak|save)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Allow Cross-Origin for fonts
+<FilesMatch "\.(ttf|otf|eot|woff|woff2)$">
+    <IfModule mod_headers.c>
+        Header set Access-Control-Allow-Origin "*"
+    </IfModule>
+</FilesMatch>
+
+# API Routing (if using PHP/backend)
+RewriteRule ^api/(.*)$ api/index.php?endpoint=$1 [QSA,L]
+
+# SPA Routing - Redirect all requests to index.html except for files that exist
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(?!.*\.(jpg|jpeg|png|gif|css|js|pdf|doc|docx|txt|ico|svg|woff|woff2|ttf|eot)$).*$ /index.html [L,NC]
+
+# Gzip Compression for specific file types
+<IfModule mod_filter.c>
+    AddOutputFilterByType DEFLATE "application/atom+xml"
+    AddOutputFilterByType DEFLATE "application/javascript"
+    AddOutputFilterByType DEFLATE "application/json"
+    AddOutputFilterByType DEFLATE "application/ld+json"
+    AddOutputFilterByType DEFLATE "application/manifest+json"
+    AddOutputFilterByType DEFLATE "application/rdf+xml"
+    AddOutputFilterByType DEFLATE "application/rss+xml"
+    AddOutputFilterByType DEFLATE "application/schema+json"
+    AddOutputFilterByType DEFLATE "application/vnd.geo+json"
+    AddOutputFilterByType DEFLATE "application/vnd.ms-fontobject"
+    AddOutputFilterByType DEFLATE "application/x-font-ttf"
+    AddOutputFilterByType DEFLATE "application/x-javascript"
+    AddOutputFilterByType DEFLATE "application/x-web-app-manifest+json"
+    AddOutputFilterByType DEFLATE "application/xhtml+xml"
+    AddOutputFilterByType DEFLATE "application/xml"
+    AddOutputFilterByType DEFLATE "font/eot"
+    AddOutputFilterByType DEFLATE "font/opentype"
+    AddOutputFilterByType DEFLATE "image/bmp"
+    AddOutputFilterByType DEFLATE "image/svg+xml"
+    AddOutputFilterByType DEFLATE "image/vnd.microsoft.icon"
+    AddOutputFilterByType DEFLATE "image/x-icon"
+    AddOutputFilterByType DEFLATE "text/cache-manifest"
+    AddOutputFilterByType DEFLATE "text/css"
+    AddOutputFilterByType DEFLATE "text/html"
+    AddOutputFilterByType DEFLATE "text/javascript"
+    AddOutputFilterByType DEFLATE "text/plain"
+    AddOutputFilterByType DEFLATE "text/vcard"
+    AddOutputFilterByType DEFLATE "text/vnd.rim.location.xloc"
+    AddOutputFilterByType DEFLATE "text/vtt"
+    AddOutputFilterByType DEFLATE "text/x-component"
+    AddOutputFilterByType DEFLATE "text/x-cross-domain-policy"
+    AddOutputFilterByType DEFLATE "text/xml"
+</IfModule>
+
+# Prevent directory listing
+Options -Indexes
+
+# Custom 404 page for API endpoints
+RewriteCond %{REQUEST_URI} ^/api/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* - [L,R=404]
+
+# WebP support
+<IfModule mod_rewrite.c>
+    RewriteCond %{HTTP_ACCEPT} image/webp
+    RewriteCond %{REQUEST_FILENAME} (.*)\.(jpe?g|png)$
+    RewriteCond %{REQUEST_FILENAME}\.webp -f
+    RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header append Vary Accept env=REDIRECT_accept
+</IfModule>
+
+AddType image/webp .webp
+
+# Performance optimizations
+<IfModule mod_headers.c>
+    # Enable keep-alive
+    Header set Connection keep-alive
+    
+    # Enable OCSP stapling
+    Header set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+</IfModule>
+
+# File upload size limits (adjust as needed)
+php_value upload_max_filesize 10M
+php_value post_max_size 10M
+php_value max_execution_time 300
+php_value max_input_time 300
+
+# ETag configuration
+FileETag MTime Size
