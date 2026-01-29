@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Test - Zewed</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/themes/zewed-theme.css">
+    <style>
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+        .test-section {
+            padding: 2rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="theme-heading">CSS Test Page</h1>
+        <div class="test-grid">
+            <!-- Buttons Test -->
+            <div class="test-section">
+                <h3>Buttons</h3>
+                <button class="btn btn-theme">Theme Button</button>
+                <button class="btn btn-outline-theme">Outline Theme</button>
+                <button class="btn btn-primary">Primary</button>
+            </div>
+            
+            <!-- Cards Test -->
+            <div class="test-section">
+                <h3>Cards</h3>
+                <div class="theme-card" style="padding: 1rem;">
+                    <h4>Theme Card</h4>
+                    <p>This is a theme card example.</p>
+                </div>
+            </div>
+            
+            <!-- Forms Test -->
+            <div class="test-section">
+                <h3>Forms</h3>
+                <div class="theme-form">
+                    <input type="text" class="form-control" placeholder="Theme input">
+                    <div class="theme-checkbox">
+                        <input type="checkbox" id="test-check">
+                        <label for="test-check">Checkbox</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
