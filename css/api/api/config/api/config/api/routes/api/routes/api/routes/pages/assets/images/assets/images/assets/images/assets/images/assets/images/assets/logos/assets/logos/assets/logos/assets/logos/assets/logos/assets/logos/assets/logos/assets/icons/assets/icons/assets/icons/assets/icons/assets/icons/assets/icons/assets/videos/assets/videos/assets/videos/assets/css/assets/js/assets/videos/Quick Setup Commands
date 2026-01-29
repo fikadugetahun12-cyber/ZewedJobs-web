@@ -1,0 +1,21 @@
+# Create directory structure
+mkdir -p assets/icons assets/videos/{promo,tutorials,testimonials,events}
+
+# Save SVG files
+cd assets/icons
+# Save all SVG files from above
+
+# Create video placeholders (requires ffmpeg)
+cd assets/videos
+chmod +x generate-placeholders.sh
+./generate-placeholders.sh
+
+# Or create simple placeholder files
+cd assets/videos
+echo "Video placeholder" > promo/intro.txt
+echo "Video placeholder" > tutorials/job-search.txt
+
+# Create CSS file for videos
+cd ../../
+mkdir -p assets/css
+# Save video.css file above
