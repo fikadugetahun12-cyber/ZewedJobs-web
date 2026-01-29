@@ -1,0 +1,17 @@
+<!-- Using theme classes -->
+<div class="theme-card">
+    <div class="theme-feature">
+        <div class="theme-feature-icon">💼</div>
+        <h3 class="theme-heading">Job Matching</h3>
+        <p>AI-powered job recommendations</p>
+    </div>
+</div>
+
+<!-- Theme buttons -->
+<button class="btn btn-theme">Primary Action</button>
+<button class="btn btn-outline-theme">Secondary Action</button>
+
+<!-- Ethiopian theme elements -->
+<div class="ethiopian-flag-accent">
+    <h2>Ethiopian Employment</h2>
+</div>
