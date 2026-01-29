@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Gallery - Zewed</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/video.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="main-header">
+        <!-- Same as other pages -->
+    </header>
+
+    <main class="container">
+        <h1>Video Gallery</h1>
+        
+        <!-- Category filter -->
+        <div class="video-categories">
+            <button class="category-btn active" onclick="filterVideos('all')">All Videos</button>
+            <button class="category-btn" onclick="filterVideos('promo')">Promotional</button>
+            <button class="category-btn" onclick="filterVideos('tutorial')">Tutorials</button>
+            <button class="category-btn" onclick="filterVideos('testimonial')">Testimonials</button>
+            <button class="category-btn" onclick="filterVideos('event')">Events</button>
+        </div>
+
+        <!-- Video Gallery -->
+        <div class="video-gallery" id="video-gallery">
+            <!-- Videos will be loaded here dynamically -->
+        </div>
+
+        <!-- Featured Video -->
+        <section class="featured-video">
+            <h2>Featured Video</h2>
+            <div class="video-player" data-video-id="intro">
+                <div class="video-container">
+                    <video id="featured-video" controls poster="assets/videos/promo/intro-thumbnail.jpg">
+                        <source src="assets/videos/promo/intro.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="video-modal">
+        <div class="video-modal-content">
+            <button class="close-modal">&times;</button>
+            <video id="modal-video" controls>
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-info">
+                <h3 id="modal-video-title"></h3>
+                <p id="modal-video-desc"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/video-gallery.js"></script>
+    <script>
+        function filterVideos(category) {
+            const videoGallery = window.videoGallery;
+            videoGallery.filterVideos(category);
+            
+            // Update active button
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
