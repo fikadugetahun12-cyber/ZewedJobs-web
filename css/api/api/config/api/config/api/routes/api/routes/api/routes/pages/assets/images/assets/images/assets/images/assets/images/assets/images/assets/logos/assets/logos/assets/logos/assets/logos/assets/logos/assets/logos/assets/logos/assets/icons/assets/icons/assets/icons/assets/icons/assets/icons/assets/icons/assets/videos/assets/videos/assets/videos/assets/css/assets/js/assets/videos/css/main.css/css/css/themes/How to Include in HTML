@@ -1,0 +1,13 @@
+<head>
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="css/payment.css">
+    <!-- OR -->
+    <link rel="stylesheet" href="css/ai-chat.css">
+    
+    <!-- Theme -->
+    <link rel="stylesheet" href="css/themes/zewed-theme.css">
+</head>
