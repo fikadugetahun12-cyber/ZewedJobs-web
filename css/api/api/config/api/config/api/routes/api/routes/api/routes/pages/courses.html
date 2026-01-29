@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Career development courses and skill training for Ethiopian professionals">
+    <title>Career Courses - Zewed</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/themes/zewed-theme.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="icon" href="../assets/logos/favicon.png">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="../index.html" class="logo">
+                    <img src="../assets/logos/logo-192.png" alt="Zewed Logo" height="40">
+                    <span>ZEWED</span>
+                </a>
+                
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="jobs.html">Jobs</a></li>
+                    <li><a href="employers.html">For Employers</a></li>
+                    <li><a href="courses.html" class="active">Courses</a></li>
+                    <li><a href="../news.html">News</a></li>
+                    <li><a href="../events.html">Events</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <select id="language-selector" class="language-selector">
+                        <option value="en">English</option>
+                        <option value="am">አማርኛ</option>
+                        <option value="om">Afaan Oromo</option>
+                        <option value="ti">ትግርኛ</option>
+                    </select>
+                    <a href="../ai-chat.html" class="btn btn-ai">AI Assistant</a>
+                    <button class="btn btn-primary" onclick="window.location.href='#enroll'">Start Learning</button>
+                </div>
+                
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="jobs.html">Jobs</a></li>
+            <li><a href="employers.html">For Employers</a></li>
+            <li><a href="courses.html" class="active">Courses</a></li>
+            <li><a href="../news.html">News</a></li>
+            <li><a href="../events.html">Events</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </div>
+
+    <main class="courses-page">
+        <!-- Hero Section -->
+        <section class="courses-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Advance Your Career with Zewed Courses</h1>
+                    <p>Master in-demand skills and boost your career prospects with our expert-led courses</p>
+                    <div class="hero-search">
+                        <input type="text" placeholder="Search courses by skill or industry" id="course-search">
+                        <button class="btn btn-primary" onclick="searchCourses()">Search</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="course-stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>200+</h3>
+                        <p>Online Courses</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>50+</h3>
+                        <p>Expert Instructors</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>10,000+</h3>
+                        <p>Students Enrolled</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>95%</h3>
+                        <p>Satisfaction Rate</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Courses -->
+        <section class="featured-courses">
+            <div class="container">
+                <h2 class="section-title">Featured Courses</h2>
+                <p class="section-subtitle">Most popular courses selected for you</p>
+                
+                <div class="course-categories">
+                    <button class="category-btn active" onclick="filterCourses('all')">All Courses</button>
+                    <button class="category-btn" onclick="filterCourses('free')">Free Courses</button>
+                    <button class="category-btn" onclick="filterCourses('tech')">Technology</button>
+                    <button class="category-btn" onclick="filterCourses('business')">Business</button>
+                    <button class="category-btn" onclick="filterCourses('language')">Languages</button>
+                </div>
+                
+                <div class="courses-grid" id="courses-container">
+                    <!-- Courses will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Paths -->
+        <section class="learning-paths">
+            <div class="container">
+                <h2 class="section-title">Career Learning Paths</h2>
+                <p class="section-subtitle">Structured programs to achieve career goals</p>
+                
+                <div class="paths-grid">
+                    <div class="path-card">
+                        <div class="path-icon">💻</div>
+                        <h3>Software Developer</h3>
+                        <p>Become a full-stack developer in 6 months</p>
+                        <ul>
+                            <li>5 Courses</li>
+                            <li>180 Hours</li>
+                            <li>Certificate</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="viewPath('software')">View Path</button>
+                    </div>
+                    
+                    <div class="path-card">
+                        <div class="path-icon">📊</div>
+                        <h3>Digital Marketing</h3>
+                        <p>Master digital marketing strategies</p>
+                        <ul>
+                            <li>4 Courses</li>
+                            <li>120 Hours</li>
+                            <li>Certificate</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="viewPath('marketing')">View Path</button>
+                    </div>
+                    
+                    <div class="path-card">
+                        <div class="path-icon">🏦</div>
+                        <h3>Banking Professional</h3>
+                        <p>Advance your banking career</p>
+                        <ul>
+                            <li>6 Courses</li>
+                            <li>200 Hours</li>
+                            <li>Certificate</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="viewPath('banking')">View Path</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="course-pricing">
+            <div class="container">
+                <h2 class="section-title">Choose Your Learning Plan</h2>
+                
+                <div class="pricing-cards">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Free</h3>
+                            <p>For self-paced learners</p>
+                        </div>
+                        <div class="pricing-price">
+                            <span class="amount">0</span>
+                            <span class="currency">ETB</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>✓ Access to free courses</li>
+                            <li>✓ Basic learning materials</li>
+                            <li>✓ Community access</li>
+                            <li>✗ Premium courses</li>
+                            <li>✗ Certificates</li>
+                            <li>✗ 1-on-1 mentorship</li>
+                        </ul>
+                        <button class="btn btn-outline" onclick="selectPlan('free')">Start Free</button>
+                    </div>
+                    
+                    <div class="pricing-card popular">
+                        <div class="popular-badge">MOST POPULAR</div>
+                        <div class="pricing-header">
+                            <h3>Premium</h3>
+                            <p>For serious learners</p>
+                        </div>
+                        <div class="pricing-price">
+                            <span class="amount">1,000</span>
+                            <span class="currency">ETB</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>✓ All premium courses</li>
+                            <li>✓ Downloadable materials</li>
+                            <li>✓ Verified certificates</li>
+                            <li>✓ Career guidance</li>
+                            <li>✓ Priority support</li>
+                            <li>✓ 1-on-1 mentorship</li>
+                        </ul>
+                        <button class="btn btn-primary" onclick="selectPlan('premium')">Get Premium</button>
+                    </div>
+                    
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Enterprise</h3>
+                            <p>For teams & companies</p>
+                        </div>
+                        <div class="pricing-price">
+                            <span class="amount">Custom</span>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>✓ Team management</li>
+                            <li>✓ Progress tracking</li>
+                            <li>✓ Custom learning paths</li>
+                            <li>✓ Dedicated support</li>
+                            <li>✓ Company branding</li>
+                            <li>✓ Analytics dashboard</li>
+                        </ul>
+                        <button class="btn btn-outline" onclick="selectPlan('enterprise')">Contact Sales</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="course-testimonials">
+            <div class="container">
+                <h2 class="section-title">What Our Students Say</h2>
+                <div class="testimonials-slider">
+                    <div class="testimonial-slide active">
+                        <div class="testimonial-content">
+                            <p>"The software development courses helped me land my first tech job. The instructors are amazing!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">AS</div>
+                            <div class="author-info">
+                                <h4>Alemayehu Solomon</h4>
+                                <p>Junior Developer at TechEthiopia</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <p>"I improved my English skills dramatically with Zewed's language courses. Highly recommended!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">SM</div>
+                            <div class="author-info">
+                                <h4>Sara Mekonnen</h4>
+                                <p>Marketing Executive</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn" onclick="prevTestimonial()">‹</button>
+                    <button class="slider-btn" onclick="nextTestimonial()">›</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="course-faq">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            Are the certificates recognized?
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, our certificates are recognized by employers across Ethiopia. Many companies specifically look for Zewed certifications.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            Can I access courses on mobile?
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, all courses are mobile-friendly and can be accessed on smartphones, tablets, and computers.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            Do you offer refunds?
+                            <span class="faq-toggle">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, we offer a 30-day money-back guarantee for all premium subscriptions if you're not satisfied.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="course-cta" id="enroll">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Start Learning Today</h2>
+                    <p>Join thousands of professionals advancing their careers with Zewed Courses</p>
+                    <button class="btn btn-primary btn-large" onclick="startFreeTrial()">
+                        Start Free Trial
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Zewed</h3>
+                    <p>Empowering Ethiopian Workforce</p>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Telegram</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Twitter</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Courses</h3>
+                    <ul>
+                        <li><a href="#tech">Technology</a></li>
+                        <li><a href="#business">Business</a></li>
+                        <li><a href="#language">Languages</a></li>
+                        <li><a href="#free">Free Courses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Instructor</a></li>
+                        <li><a href="#">Technical Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Addis Ababa, Ethiopia</p>
+                    <p>courses@zewed.com</p>
+                    <p>+251 911 234 567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zewed Employment Platform. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="about.html">About Us</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Course Details Modal -->
+    <div class="modal" id="course-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-course-title">Course Title</h3>
+                <button class="close-modal" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Course details will be loaded here -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="enrollCourse()">Enroll Now</button>
+                <button class="btn btn-outline" onclick="saveCourse()">Save for Later</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../libs/jquery/jquery.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        // Sample course data
+        const coursesData = [
+            {
+                id: 1,
+                title: "Web Development Fundamentals",
+                instructor: "John Doe",
+                category: "tech",
+                price: "Free",
+                duration: "40 hours",
+                students: "2,500",
+                rating: 4.8,
+                level: "Beginner",
+                description: "Learn HTML, CSS, and JavaScript from scratch. Build your first website.",
+                syllabus: ["HTML Basics", "CSS Styling", "JavaScript Fundamentals", "Responsive Design"],
+                isPremium: false
+            },
+            {
+                id: 2,
+                title: "Digital Marketing Mastery",
+                instructor: "Sarah Johnson",
+                category: "business",
+                price: "1,500 ETB",
+                duration: "60 hours",
+                students: "1,800",
+                rating: 4.7,
+                level: "Intermediate",
+                description: "Master social media marketing, SEO, and content strategy.",
+                syllabus: ["Social Media Marketing", "SEO Optimization", "Content Strategy", "Analytics"],
+                isPremium: true
+            },
+            {
+                id: 3,
+                title: "Business English for Professionals",
+                instructor: "Michael Brown",
+                category: "language",
+                price: "Free",
+                duration: "50 hours",
+                students: "3,200",
+                rating: 4.9,
+                level: "All Levels",
+                description: "Improve your business communication skills in English.",
+                syllabus: ["Business Vocabulary", "Email Writing", "Presentation Skills", "Negotiation"],
+                isPremium: false
+            },
+            {
+                id: 4,
+                title: "Python Programming",
+                instructor: "Alex Chen",
+                category: "tech",
+                price: "2,000 ETB",
+                duration: "80 hours",
+                students: "1,200",
+                rating: 4.6,
+                level: "Beginner",
+                description: "Learn Python programming from basics to advanced topics.",
+                syllabus: ["Python Basics", "Data Structures", "Web Development", "Data Science"],
+                isPremium: true
+            },
+            {
+                id: 5,
+                title: "Financial Management",
+                instructor: "Dr. Ahmed Hassan",
+                category: "business",
+                price: "1,800 ETB",
+                duration: "55 hours",
+                students: "900",
+                rating: 4.8,
+                level: "Intermediate",
+                description: "Learn financial planning, budgeting, and investment strategies.",
+                syllabus: ["Financial Planning", "Budgeting", "Investment", "Risk Management"],
+                isPremium: true
+            },
+            {
+                id: 6,
+                title: "Amharic for Beginners",
+                instructor: "Meron Abebe",
+                category: "language",
+                price: "Free",
+                duration: "30 hours",
+                students: "1,500",
+                rating: 4.7,
+                level: "Beginner",
+                description: "Learn basic Amharic conversation and writing skills.",
+                syllabus: ["Alphabet", "Basic Conversation", "Grammar", "Reading & Writing"],
+                isPremium: false
+            }
+        ];
+
+        let filteredCourses = coursesData;
+        let currentCategory = 'all';
+        let currentTestimonial = 0;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeTranslations();
+            displayCourses(coursesData);
+            setupCoursePage();
+        });
+
+        function setupCoursePage() {
+            // Mobile menu toggle
+            document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+                document.querySelector('.mobile-menu').classList.toggle('active');
+            });
+            
+            // Course search
+            document.getElementById('course-search').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    searchCourses();
+                }
+            });
+            
+            // Close modal when clicking outside
+            document.getElementById('course-modal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal();
+                }
+            });
+        }
+
+        function displayCourses(courses) {
+            const container = document.getElementById('courses-container');
+            
+            if (courses.length === 0) {
+                container.innerHTML = `
+                    <div class="no-courses">
+                        <h3>No courses found</h3>
+                        <p>Try a different search or category</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = courses.map(course => `
+                <div class="course-card" onclick="viewCourseDetails(${course.id})">
+                    <div class="course-image">
+                        <div class="course-category">${course.category}</div>
+                        ${course.isPremium ? '<div class="premium-badge">Premium</div>' : ''}
+                    </div>
+                    <div class="course-content">
+                        <h3>${course.title}</h3>
+                        <p class="course-instructor">By ${course.instructor}</p>
+                        <div class="course-meta">
+                            <span>⏱️ ${course.duration}</span>
+                            <span>👥 ${course.students} students</span>
+                            <span>⭐ ${course.rating}</span>
+                        </div>
+                        <div class="course-level">
+                            <span class="level-badge ${course.level.toLowerCase()}">${course.level}</span>
+                        </div>
+                        <div class="course-price">
+                            <strong>${course.price}</strong>
+                        </div>
+                        <button class="btn btn-primary btn-small" onclick="event.stopPropagation(); enrollCourse(${course.id})">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterCourses(category) {
+            currentCategory = category;
+            
+            // Update active category button
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            if (category === 'all') {
+                filteredCourses = coursesData;
+            } else if (category === 'free') {
+                filteredCourses = coursesData.filter(course => course.price === 'Free');
+            } else {
+                filteredCourses = coursesData.filter(course => course.category === category);
+            }
+            
+            displayCourses(filteredCourses);
+        }
+
+        function searchCourses() {
+            const searchTerm = document.getElementById('course-search').value.toLowerCase();
+            
+            const results = coursesData.filter(course => 
+                course.title.toLowerCase().includes(searchTerm) ||
+                course.description.toLowerCase().includes(searchTerm) ||
+                course.instructor.toLowerCase().includes(searchTerm)
+            );
+            
+            filteredCourses = results;
+            displayCourses(results);
+        }
+
+        function viewCourseDetails(courseId) {
+            const course = coursesData.find(c => c.id === courseId);
+            if (!course) return;
+            
+            const modal = document.getElementById('course-modal');
+            document.getElementById('modal-course-title').textContent = course.title;
+            
+            document.querySelector('.modal-body').innerHTML = `
+                <div class="course-details">
+                    <div class="detail-section">
+                        <h4>Instructor</h4>
+                        <p>${course.instructor}</p>
+                    </div>
+                    <div class="detail-section">
+                        <h4>Description</h4>
+                        <p>${course.description}</p>
+                    </div>
+                    <div class="detail-section">
+                        <h4>Syllabus</h4>
+                        <ul>
+                            ${course.syllabus.map(item => `<li>${item}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>Course Details</h4>
+                        <div class="course-stats">
+                            <div class="stat">
+                                <strong>Duration:</strong> ${course.duration}
+                            </div>
+                            <div class="stat">
+                                <strong>Level:</strong> ${course.level}
+                            </div>
+                            <div class="stat">
+                                <strong>Students:</strong> ${course.students}
+                            </div>
+                            <div class="stat">
+                                <strong>Rating:</strong> ${course.rating} ⭐
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('course-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function enrollCourse(courseId) {
+            const course = coursesData.find(c => c.id === courseId);
+            if (!course) return;
+            
+            // Check if user is logged in
+            const user = localStorage.getItem('user_data');
+            if (!user) {
+                showNotification('Please login to enroll in courses', 'warning');
+                return;
+            }
+            
+            if (course.isPremium) {
+                // Redirect to payment for premium courses
+                window.location.href = `../payment.html?course=${courseId}`;
+            } else {
+                // Enroll in free course
+                const enrollments = JSON.parse(localStorage.getItem('course_enrollments') || '[]');
+                if (!enrollments.includes(courseId)) {
+                    enrollments.push(courseId);
+                    localStorage.setItem('course_enrollments', JSON.stringify(enrollments));
+                }
+                showNotification(`Successfully enrolled in "${course.title}"`, 'success');
+                closeModal();
+            }
+        }
+
+        function saveCourse(courseId) {
+            const course = coursesData.find(c => c.id === courseId);
+            if (!course) return;
+            
+            const savedCourses = JSON.parse(localStorage.getItem('saved_courses') || '[]');
+            if (!savedCourses.find(c => c.id === courseId)) {
+                savedCourses.push(course);
+                localStorage.setItem('saved_courses', JSON.stringify(savedCourses));
+                showNotification('Course saved successfully', 'success');
+            } else {
+                showNotification('Course already saved', 'info');
+            }
+        }
+
+        function selectPlan(plan) {
+            if (plan === 'free') {
+                // Show free courses
+                filterCourses('free');
+                document.getElementById('course-search').scrollIntoView({ behavior: 'smooth' });
+            } else if (plan === 'premium') {
+                // Redirect to payment for premium
+                window.location.href = '../payment.html?plan=premium';
+            } else {
+                // Contact for enterprise
+                showNotification('Our sales team will contact you shortly', 'success');
+            }
+        }
+
+        function viewPath(pathName) {
+            showNotification(`Loading ${pathName} learning path...`, 'info');
+            // In production, this would redirect to the learning path page
+        }
+
+        function startFreeTrial() {
+            const user = localStorage.getItem('user_data');
+            if (user) {
+                // User already logged in, show courses
+                window.location.href = '#featured-courses';
+            } else {
+                // Redirect to login/registration
+                showNotification('Please create an account to start your free trial', 'info');
+                setTimeout(() => {
+                    window.location.href = '../payment.html?trial=true';
+                }, 1500);
+            }
+        }
+
+        function nextTestimonial() {
+            const slides = document.querySelectorAll('.testimonial-slide');
+            slides[currentTestimonial].classList.remove('active');
+            currentTestimonial = (currentTestimonial + 1) % slides.length;
+            slides[currentTestimonial].classList.add('active');
+        }
+
+        function prevTestimonial() {
+            const slides = document.querySelectorAll('.testimonial-slide');
+            slides[currentTestimonial].classList.remove('active');
+            currentTestimonial = (currentTestimonial - 1 + slides.length) % slides.length;
+            slides[currentTestimonial].classList.add('active');
+        }
+
+        function toggleFaq(button) {
+            const answer = button.nextElementSibling;
+            const toggle = button.querySelector('.faq-toggle');
+            
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                toggle.textContent = '+';
+            } else {
+                answer.style.display = 'block';
+                toggle.textContent = '-';
+            }
+        }
+    </script>
+    
+    <style>
+        /* Courses Page Specific Styles */
+        .courses-page {
+            background: var(--light-bg);
+        }
+        
+        .courses-hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero-search {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .hero-search input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .course-stats {
+            padding: 3rem 0;
+            background: white;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .stat-card h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-card p {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+        
+        .featured-courses {
+            padding: 4rem 0;
+        }
+        
+        .course-categories {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .category-btn {
+            padding: 0.75rem 1.5rem;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .category-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .category-btn:hover:not(.active) {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .course-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .course-image {
+            height: 180px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .course-category {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(255,255,255,0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            backdrop-filter: blur(5px);
+        }
+        
+        .premium-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: gold;
+            color: #333;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .course-content {
+            padding: 1.5rem;
+        }
+        
+        .course-content h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        
+        .course-instructor {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .course-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        .course-level {
+            margin-bottom: 1rem;
+        }
+        
+        .level-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .level-badge.beginner {
+            background: #c6f6d5;
+            color: #22543d;
+        }
+        
+        .level-badge.intermediate {
+            background: #fed7d7;
+            color: #742a2a;
+        }
+        
+        .course-price {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+        
+        .btn-small {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .learning-paths {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .paths-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .path-card {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #e2e8f0;
+            transition: border-color 0.3s;
+        }
+        
+        .path-card:hover {
+            border-color: var(--primary-color);
+        }
+        
+        .path-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .path-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .path-card p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+        
+        .path-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .path-card ul li {
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .course-pricing {
+            padding: 4rem 0;
+        }
+        
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .pricing-card.popular {
+            border: 2px solid var(--accent-color);
+            transform: scale(1.05);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .pricing-price {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .amount {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .currency {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-left: 0.25rem;
+        }
+        
+        .period {
+            color: var(--text-light);
+            margin-left: 0.5rem;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+            flex: 1;
+        }
+        
+        .pricing-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-card button {
+            width: 100%;
+            margin-top: auto;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .course-testimonials {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .testimonials-slider {
+            max-width: 800px;
+            margin: 3rem auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial-slide {
+            display: none;
+            text-align: center;
+        }
+        
+        .testimonial-slide.active {
+            display: block;
+        }
+        
+        .testimonial-content {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .testimonial-content p {
+            font-style: italic;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 0.25rem;
+        }
+        
+        .author-info p {
+            color: var(--text-light);
+        }
+        
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .slider-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid var(--primary-color);
+            background: white;
+            color: var(--primary-color);
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .slider-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .course-faq {
+            padding: 4rem 0;
+            background: var(--light-bg);
+        }
+        
+        .faq-grid {
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+        
+        .faq-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-toggle {
+            font-size: 1.5rem;
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            display: none;
+            line-height: 1.6;
+        }
+        
+        .course-cta {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .btn-large {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background: white;
+            margin: 2rem auto;
+            max-width: 600px;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .modal-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+        
+        .modal-body {
+            padding: 1.5rem;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+        
+        .modal-footer {
+            padding: 1.5rem;
+            border-top: 1px solid #e2e8f0;
+            text-align: right;
+        }
+        
+        .course-details .detail-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .course-details h4 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .course-details ul {
+            list-style: disc;
+            margin-left: 1.5rem;
+        }
+        
+        .course-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        
+        .course-stats .stat {
+            background: var(--light-bg);
+            padding: 1rem;
+            border-radius: 4px;
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .mobile-menu-btn span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--text-color);
+            margin: 4px 0;
+            transition: 0.3s;
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            z-index: 999;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        .mobile-menu ul {
+            list-style: none;
+            padding: 1rem;
+        }
+        
+        .mobile-menu li {
+            margin: 0.5rem 0;
+        }
+        
+        .mobile-menu a {
+            display: block;
+            padding: 0.75rem;
+            text-decoration: none;
+            color: var(--text-color);
+            border-radius: 4px;
+        }
+        
+        .mobile-menu a.active {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-search {
+                flex-direction: column;
+            }
+            
+            .course-categories {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .pricing-card.popular {
+                transform: none;
+            }
+            
+            .course-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-content {
+                margin: 1rem;
+            }
+        }
+    </style>
+</body>
+</html>
