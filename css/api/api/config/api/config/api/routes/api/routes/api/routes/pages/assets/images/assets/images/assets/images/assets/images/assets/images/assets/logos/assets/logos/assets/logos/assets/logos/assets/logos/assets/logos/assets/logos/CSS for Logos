@@ -1,0 +1,60 @@
+/* assets/css/logos.css */
+.payment-method img {
+  width: 120px;
+  height: 60px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.payment-method:hover img {
+  transform: scale(1.05);
+}
+
+/* Logo sizes for different uses */
+.logo-small {
+  width: 40px;
+  height: 40px;
+}
+
+.logo-medium {
+  width: 80px;
+  height: 80px;
+}
+
+.logo-large {
+  width: 160px;
+  height: 160px;
+}
+
+/* Favicon sizes */
+.favicon-16 { width: 16px; height: 16px; }
+.favicon-32 { width: 32px; height: 32px; }
+.favicon-48 { width: 48px; height: 48px; }
+.favicon-64 { width: 64px; height: 64px; }
+
+/* Payment logo grid */
+.payment-logos {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.payment-logo {
+  width: 100px;
+  height: 50px;
+  padding: 0.5rem;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
