@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f7fafc"/>
+  
+  <!-- Border -->
+  <rect x="10" y="10" width="780" height="580" rx="8" fill="none" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <!-- Icon -->
+  <circle cx="400" cy="250" r="80" fill="#e2e8f0"/>
+  <text x="400" y="250" text-anchor="middle" fill="#a0aec0" font-family="Arial, sans-serif" font-size="48" font-weight="bold" dy=".3em">
+    📷
+  </text>
+  
+  <!-- Text -->
+  <text x="400" y="400" text-anchor="middle" fill="#4a5568" font-family="Arial, sans-serif" font-size="24" font-weight="bold">
+    Image Placeholder
+  </text>
+  <text x="400" y="440" text-anchor="middle" fill="#718096" font-family="Arial, sans-serif" font-size="16">
+    800×600
+  </text>
+  <text x="400" y="480" text-anchor="middle" fill="#cbd5e0" font-family="Arial, sans-serif" font-size="14">
+    Replace with actual image
+  </text>
+  
+  <!-- Dimensions -->
+  <text x="50" y="50" fill="#cbd5e0" font-family="Arial, sans-serif" font-size="12">
+    0,0
+  </text>
+  <text x="750" y="590" text-anchor="end" fill="#cbd5e0" font-family="Arial, sans-serif" font-size="12">
+    800,600
+  </text>
+</svg>
