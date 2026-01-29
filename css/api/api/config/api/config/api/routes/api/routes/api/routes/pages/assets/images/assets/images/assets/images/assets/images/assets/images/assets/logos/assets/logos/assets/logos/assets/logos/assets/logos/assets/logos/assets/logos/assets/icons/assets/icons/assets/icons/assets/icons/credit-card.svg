@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <!-- Background -->
+  <circle cx="50" cy="50" r="45" fill="#e53e3e" opacity="0.1"/>
+  
+  <!-- Credit Card -->
+  <rect x="25" y="30" width="50" height="30" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  
+  <!-- Card chip -->
+  <rect x="30" y="35" width="15" height="10" rx="2" fill="#d69e2e"/>
+  <path d="M 33,38 L 42,38 M 33,40 L 42,40 M 33,42 L 42,42" stroke="#ffffff" stroke-width="1"/>
+  
+  <!-- Card network logos -->
+  <g transform="translate(70, 35)">
+    <!-- Visa -->
+    <rect x="-10" y="-4" width="20" height="8" fill="#1a1f71" rx="1"/>
+    <text x="0" y="2" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="6">VISA</text>
+  </g>
+  
+  <g transform="translate(70, 45)">
+    <!-- Mastercard -->
+    <circle cx="-4" cy="0" r="4" fill="#eb001b"/>
+    <circle cx="4" cy="0" r="4" fill="#f79e1b"/>
+    <circle cx="0" cy="0" r="4" fill="rgba(235,0,27,0.5)" opacity="0.7"/>
+  </g>
+  
+  <!-- Card number -->
+  <text x="50" y="55" text-anchor="middle" fill="#4a5568" font-family="Arial, sans-serif" font-size="6" letter-spacing="1">
+    ••••  ••••  ••••  1234
+  </text>
+  
+  <!-- Card holder -->
+  <text x="30" y="65" text-anchor="start" fill="#718096" font-family="Arial, sans-serif" font-size="5">
+    CARD HOLDER
+  </text>
+  <text x="30" y="70" text-anchor="start" fill="#4a5568" font-family="Arial, sans-serif" font-size="6">
+    JOHN DOE
+  </text>
+  
+  <!-- Expiry date -->
+  <text x="70" y="65" text-anchor="start" fill="#718096" font-family="Arial, sans-serif" font-size="5">
+    VALID THRU
+  </text>
+  <text x="70" y="70" text-anchor="start" fill="#4a5568" font-family="Arial, sans-serif" font-size="6">
+    12/26
+  </text>
+  
+  <!-- Magnetic stripe -->
+  <rect x="25" y="25" width="50" height="5" fill="#2d3748"/>
+  
+  <!-- Contactless symbol -->
+  <g transform="translate(45, 40)">
+    <path d="M 0,-3 A 3,3 0 0,1 0,3 A 3,3 0 0,1 0,-3" fill="none" stroke="#38a169" stroke-width="1"/>
+    <path d="M 0,-5 A 5,5 0 0,1 0,5 A 5,5 0 0,1 0,-5" fill="none" stroke="#38a169" stroke-width="1"/>
+  </g>
+  
+  <!-- Security features -->
+  <g transform="translate(50, 80)">
+    <!-- Shield -->
+    <path d="M -8,-10 L 0,-15 L 8,-10 Q 8,0 0,5 Q -8,0 -8,-10" fill="none" stroke="#38a169" stroke-width="1"/>
+    <!-- Lock -->
+    <rect x="-3" y="0" width="6" height="4" rx="1" fill="#38a169"/>
+    <circle cx="0" cy="0" r="2" fill="#38a169"/>
+  </g>
+</svg>
