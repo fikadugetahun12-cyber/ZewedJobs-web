@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- Background -->
+  <rect width="200" height="200" rx="20" fill="#1a365d"/>
+  
+  <!-- Z letter -->
+  <path d="M 50,60 L 150,60 L 50,140 L 150,140" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round"/>
+  
+  <!-- E letter -->
+  <path d="M 70,80 L 70,120" fill="none" stroke="#3182ce" stroke-width="8" stroke-linecap="round"/>
+  <path d="M 70,80 L 90,80" fill="none" stroke="#3182ce" stroke-width="8" stroke-linecap="round"/>
+  <path d="M 70,100 L 85,100" fill="none" stroke="#3182ce" stroke-width="8" stroke-linecap="round"/>
+  <path d="M 70,120 L 90,120" fill="none" stroke="#3182ce" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- W letter -->
+  <path d="M 105,80 L 120,120 L 135,90 L 150,120 L 165,80" fill="none" stroke="#38a169" stroke-width="8" stroke-linecap="round"/>
+  
+  <!-- Decorative circles -->
+  <circle cx="40" cy="40" r="10" fill="#3182ce" opacity="0.3"/>
+  <circle cx="160" cy="40" r="10" fill="#38a169" opacity="0.3"/>
+  <circle cx="40" cy="160" r="10" fill="#d69e2e" opacity="0.3"/>
+  <circle cx="160" cy="160" r="10" fill="#e53e3e" opacity="0.3"/>
+  
+  <!-- Company name -->
+  <text x="100" y="180" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+    ZEWED
+  </text>
+</svg>
