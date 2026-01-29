@@ -1,0 +1,5 @@
+# Create videos directory and subdirectories
+mkdir -p assets/videos/promo
+mkdir -p assets/videos/tutorials
+mkdir -p assets/videos/testimonials
+mkdir -p assets/videos/events
