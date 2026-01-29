@@ -1,0 +1,94 @@
+const sharp = require('sharp');
+const fs = require('fs');
+const path = require('path');
+
+const logoConversions = [
+  {
+    input: 'logo-192.svg',
+    outputs: [
+      { name: 'logo-192.png', width: 192, height: 192 },
+      { name: 'logo-180.png', width: 180, height: 180 },
+      { name: 'logo-152.png', width: 152, height: 152 }
+    ]
+  },
+  {
+    input: 'logo-512.svg',
+    outputs: [
+      { name: 'logo-512.png', width: 512, height: 512 },
+      { name: 'logo-384.png', width: 384, height: 384 }
+    ]
+  },
+  {
+    input: 'favicon.svg',
+    outputs: [
+      { name: 'favicon.png', width: 32, height: 32 },
+      { name: 'favicon-16x16.png', width: 16, height: 16 },
+      { name: 'favicon-32x32.png', width: 32, height: 32 },
+      { name: 'favicon.ico', width: 32, height: 32 }
+    ]
+  },
+  {
+    input: 'telebirr.svg',
+    outputs: [
+      { name: 'telebirr.png', width: 200, height: 100 },
+      { name: 'telebirr-small.png', width: 100, height: 50 }
+    ]
+  },
+  {
+    input: 'cbe.svg',
+    outputs: [
+      { name: 'cbe.png', width: 200, height: 100 },
+      { name: 'cbe-small.png', width: 100, height: 50 }
+    ]
+  },
+  {
+    input: 'paypal.svg',
+    outputs: [
+      { name: 'paypal.png', width: 200, height: 100 },
+      { name: 'paypal-small.png', width: 100, height: 50 }
+    ]
+  },
+  {
+    input: 'visa-mastercard.svg',
+    outputs: [
+      { name: 'visa-mastercard.png', width: 200, height: 100 },
+      { name: 'visa-mastercard-small.png', width: 100, height: 50 }
+    ]
+  }
+];
+
+async function convertLogos() {
+  console.log('Starting logo conversion...');
+  
+  for (const conversion of logoConversions) {
+    const inputPath = path.join(__dirname, 'assets/logos', conversion.input);
+    
+    if (!fs.existsSync(inputPath)) {
+      console.warn(`Input file not found: ${inputPath}`);
+      continue;
+    }
+    
+    for (const output of conversion.outputs) {
+      const outputPath = path.join(__dirname, 'assets/logos', output.name);
+      
+      try {
+        await sharp(inputPath)
+          .resize(output.width, output.height)
+          .toFile(outputPath);
+        
+        console.log(`✓ Created: ${output.name} (${output.width}x${output.height})`);
+      } catch (error) {
+        console.error(`✗ Failed to create ${output.name}:`, error.message);
+      }
+    }
+  }
+  
+  console.log('Logo conversion complete!');
+}
+
+// Run if called directly
+if (require.main === module) {
+  convertLogos().catch(console.error);
+}
+
+module.exports = convertLogos;
