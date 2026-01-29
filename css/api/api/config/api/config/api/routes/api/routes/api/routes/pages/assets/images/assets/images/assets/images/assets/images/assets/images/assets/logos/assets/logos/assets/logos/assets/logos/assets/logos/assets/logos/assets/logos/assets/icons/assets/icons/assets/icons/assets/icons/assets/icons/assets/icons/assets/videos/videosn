@@ -1,0 +1,59 @@
+
+## Video Specifications
+
+### Promotional Videos
+- Format: MP4 (H.264)
+- Resolution: 1080p (1920x1080)
+- Aspect Ratio: 16:9
+- Max Duration: 2 minutes
+- File naming: `promo-[title]-[date].mp4`
+
+### Tutorial Videos
+- Format: MP4 (H.264)
+- Resolution: 720p (1280x720)
+- Aspect Ratio: 16:9
+- Max Duration: 10 minutes
+- File naming: `tutorial-[topic]-[part].mp4`
+
+### Testimonial Videos
+- Format: MP4 (H.264)
+- Resolution: 720p (1280x720)
+- Aspect Ratio: 9:16 (vertical) or 16:9 (horizontal)
+- Max Duration: 1 minute
+- File naming: `testimonial-[name]-[date].mp4`
+
+## Video Optimization
+
+1. **Compression**: Use handbrake or ffmpeg for compression
+2. **Thumbnails**: Generate thumbnail for each video
+3. **Subtitles**: Include .srt files for accessibility
+4. **Metadata**: Add appropriate metadata
+
+## Recommended Tools
+
+1. **FFmpeg** - Command line video processing
+2. **HandBrake** - GUI video converter
+3. **OBS Studio** - Screen recording
+4. **DaVinci Resolve** - Video editing (free)
+
+## Sample Video Placeholders
+
+For development, you can use placeholder videos from:
+- https://pixabay.com/videos/ (free stock videos)
+- https://coverr.co/ (free stock videos)
+- https://www.pexels.com/videos/ (free stock videos)
+
+## Video Hosting Options
+
+For production, consider:
+1. **Self-hosted** - Serve directly from your server
+2. **YouTube** - Embed YouTube videos
+3. **Vimeo** - Professional video hosting
+4. **Cloudflare Stream** - Paid streaming service
+
+## Example Video Files
+
+1. `promo-intro-2024.mp4` - Platform introduction
+2. `tutorial-job-search-1.mp4` - Job search tutorial
+3. `testimonial-john-2024.mp4` - User testimonial
+4. `event-career-fair-2024.mp4` - Event recording
