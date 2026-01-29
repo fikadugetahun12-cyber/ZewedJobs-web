@@ -1,0 +1,26 @@
+<!-- In your HTML files -->
+<!-- PWA manifest icons -->
+<link rel="icon" href="assets/logos/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/logos/logo-192.png">
+<meta name="theme-color" content="#1a365d">
+
+<!-- In payment.html -->
+<div class="payment-method">
+  <img src="assets/logos/telebirr.png" alt="Telebirr" width="120" height="60">
+  <span>Telebirr</span>
+</div>
+
+<div class="payment-method">
+  <img src="assets/logos/cbe.png" alt="CBE" width="120" height="60">
+  <span>CBE Birr</span>
+</div>
+
+<div class="payment-method">
+  <img src="assets/logos/paypal.png" alt="PayPal" width="120" height="60">
+  <span>PayPal</span>
+</div>
+
+<div class="payment-method">
+  <img src="assets/logos/visa-mastercard.png" alt="Credit/Debit Card" width="120" height="60">
+  <span>Credit/Debit Card</span>
+</div>
