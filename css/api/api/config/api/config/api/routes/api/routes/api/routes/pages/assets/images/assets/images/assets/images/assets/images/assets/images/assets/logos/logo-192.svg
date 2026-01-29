@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192">
+  <!-- Background -->
+  <rect width="192" height="192" rx="24" fill="#1a365d"/>
+  
+  <!-- Main Z Shape -->
+  <path d="M 40,56 L 152,56 L 40,136 L 152,136" 
+        fill="none" 
+        stroke="#ffffff" 
+        stroke-width="12" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+  
+  <!-- Decorative Elements -->
+  <circle cx="96" cy="96" r="32" fill="none" stroke="#3182ce" stroke-width="4" stroke-dasharray="5,5"/>
+  
+  <!-- E for Employment -->
+  <path d="M 56,96 L 56,120" fill="none" stroke="#38a169" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 56,96 L 70,96" fill="none" stroke="#38a169" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 56,108 L 68,108" fill="none" stroke="#38a169" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 56,120 L 70,120" fill="none" stroke="#38a169" stroke-width="6" stroke-linecap="round"/>
+  
+  <!-- Dot Pattern -->
+  <circle cx="40" cy="40" r="4" fill="#ffffff" opacity="0.3"/>
+  <circle cx="152" cy="40" r="4" fill="#ffffff" opacity="0.3"/>
+  <circle cx="40" cy="152" r="4" fill="#ffffff" opacity="0.3"/>
+  <circle cx="152" cy="152" r="4" fill="#ffffff" opacity="0.3"/>
+  
+  <!-- Text (hidden but accessible) -->
+  <text x="-100" y="-100" fill="transparent" font-size="1">Zewed Logo</text>
+</svg>
