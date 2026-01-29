@@ -1,0 +1,16 @@
+# Save SVG files first
+cd assets/logos
+# Save each SVG file with the names above
+
+# Convert using Node.js (requires sharp)
+npm init -y
+npm install sharp
+node convert-logos.js
+
+# Or using ImageMagick
+chmod +x convert-logos.sh
+./convert-logos.sh
+
+# Or using online converter - go to:
+# https://svgtopng.com/
+# Upload each SVG and download as PNG
