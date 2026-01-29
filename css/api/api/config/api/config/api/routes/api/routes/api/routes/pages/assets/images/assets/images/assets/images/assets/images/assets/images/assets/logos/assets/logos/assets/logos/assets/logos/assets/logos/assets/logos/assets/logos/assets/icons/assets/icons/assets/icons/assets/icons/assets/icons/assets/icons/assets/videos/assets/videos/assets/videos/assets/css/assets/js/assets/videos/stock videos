@@ -1,0 +1,4 @@
+<!-- Use free stock videos during development -->
+<video controls>
+    <source src="https://assets.mixkit.co/videos/preview/mixkit-businessman-using-mobile-phone-while-walking-4472-large.mp4" type="video/mp4">
+</video>
