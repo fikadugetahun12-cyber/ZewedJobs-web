@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- Background -->
+  <rect width="32" height="32" rx="6" fill="#1a365d"/>
+  
+  <!-- Z Shape -->
+  <path d="M 8,12 L 24,12 L 8,20 L 24,20" 
+        fill="none" 
+        stroke="#ffffff" 
+        stroke-width="3" 
+        stroke-linecap="round"/>
+  
+  <!-- Dot -->
+  <circle cx="16" cy="16" r="2" fill="#38a169"/>
+</svg>
