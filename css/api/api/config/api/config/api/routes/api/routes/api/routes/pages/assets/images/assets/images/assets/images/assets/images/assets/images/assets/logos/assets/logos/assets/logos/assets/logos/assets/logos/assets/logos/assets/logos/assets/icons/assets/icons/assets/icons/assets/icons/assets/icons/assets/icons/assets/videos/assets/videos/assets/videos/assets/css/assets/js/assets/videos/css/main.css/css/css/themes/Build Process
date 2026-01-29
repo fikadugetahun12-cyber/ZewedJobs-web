@@ -1,0 +1,34 @@
+const fs = require('fs');
+const path = require('path');
+const { exec } = require('child_process');
+
+// Minify CSS files
+const cssFiles = [
+    'css/main.css',
+    'css/responsive.css',
+    'css/payment.css',
+    'css/ai-chat.css',
+    'css/themes/zewed-theme.css'
+];
+
+cssFiles.forEach(file => {
+    const content = fs.readFileSync(file, 'utf8');
+    // Basic minification
+    const minified = content
+        .replace(/\/\*[\s\S]*?\*\//g, '') // Remove comments
+        .replace(/\s+/g, ' ') // Collapse whitespace
+        .replace(/;\s*/g, ';') // Remove spaces after semicolons
+        .replace(/:\s*/g, ':') // Remove spaces after colons
+        .replace(/\s*{\s*/g, '{') // Remove spaces around braces
+        .replace(/\s*}\s*/g, '}') // Remove spaces around braces
+        .trim();
+    
+    const outputFile = file.replace('.css', '.min.css');
+    fs.writeFileSync(outputFile, minified);
+    console.log(`Minified: ${outputFile}`);
+});
+
+// Generate combined CSS for production
+const combined = cssFiles.map(file => fs.readFileSync(file, 'utf8')).join('\n');
+fs.writeFileSync('css/zewed-combined.min.css', combined);
+console.log('Generated: css/zewed-combined.min.css');
