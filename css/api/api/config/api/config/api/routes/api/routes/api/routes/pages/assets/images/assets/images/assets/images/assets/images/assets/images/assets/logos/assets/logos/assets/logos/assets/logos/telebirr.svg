@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 200 100">
+  <!-- Background -->
+  <rect width="200" height="100" rx="10" fill="#0056B3"/>
+  
+  <!-- Telebirr Text -->
+  <text x="100" y="45" 
+        text-anchor="middle" 
+        fill="#ffffff" 
+        font-family="Arial, sans-serif" 
+        font-size="28" 
+        font-weight="bold">
+    Telebirr
+  </text>
+  
+  <!-- Ethiopian Telecom -->
+  <text x="100" y="75" 
+        text-anchor="middle" 
+        fill="#FFD700" 
+        font-family="Arial, sans-serif" 
+        font-size="14">
+    by Ethio Telecom
+  </text>
+  
+  <!-- Mobile icon -->
+  <g transform="translate(60, 30)">
+    <rect x="-20" y="-15" width="40" height="30" rx="5" fill="none" stroke="#FFD700" stroke-width="2"/>
+    <circle cx="0" cy="8" r="2" fill="#FFD700"/>
+  </g>
+</svg>
