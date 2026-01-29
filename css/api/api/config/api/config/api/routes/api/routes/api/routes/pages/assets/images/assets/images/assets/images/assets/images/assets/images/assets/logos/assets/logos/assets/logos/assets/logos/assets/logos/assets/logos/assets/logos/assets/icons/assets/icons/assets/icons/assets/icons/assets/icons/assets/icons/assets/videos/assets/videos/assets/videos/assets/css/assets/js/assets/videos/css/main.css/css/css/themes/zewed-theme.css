@@ -1,0 +1,856 @@
+/* =============================================
+   ZEWED - CUSTOM THEME STYLES
+   Brand-specific theming and customizations
+   ============================================= */
+
+/* ==========================================================================
+   1. THEME VARIABLES
+   ========================================================================== */
+:root {
+    /* Zewed Brand Colors */
+    --zewed-primary: #1a365d;
+    --zewed-secondary: #2d3748;
+    --zewed-accent: #3182ce;
+    --zewed-accent-light: #90cdf4;
+    --zewed-accent-dark: #2c5282;
+    
+    /* Ethiopian Theme Colors */
+    --ethiopia-green: #078930;
+    --ethiopia-yellow: #fcdd09;
+    --ethiopia-red: #da121a;
+    --ethiopia-blue: #0f47af;
+    
+    /* Gradient Combinations */
+    --gradient-primary: linear-gradient(135deg, var(--zewed-primary) 0%, var(--zewed-secondary) 100%);
+    --gradient-accent: linear-gradient(135deg, var(--zewed-accent) 0%, #4299e1 100%);
+    --gradient-ethiopia: linear-gradient(90deg, 
+        var(--ethiopia-green) 0%, 
+        var(--ethiopia-yellow) 33%, 
+        var(--ethiopia-red) 66%, 
+        var(--ethiopia-blue) 100%);
+    
+    /* Theme-specific Shadows */
+    --theme-shadow-sm: 0 2px 4px rgba(26, 54, 93, 0.1);
+    --theme-shadow-md: 0 4px 6px -1px rgba(26, 54, 93, 0.1), 0 2px 4px -1px rgba(26, 54, 93, 0.06);
+    --theme-shadow-lg: 0 10px 15px -3px rgba(26, 54, 93, 0.1), 0 4px 6px -2px rgba(26, 54, 93, 0.05);
+    --theme-shadow-xl: 0 20px 25px -5px rgba(26, 54, 93, 0.1), 0 10px 10px -5px rgba(26, 54, 93, 0.04);
+    
+    /* Theme-specific Borders */
+    --theme-border-radius: 0.5rem;
+    --theme-border-radius-lg: 1rem;
+    --theme-border-radius-xl: 1.5rem;
+}
+
+/* ==========================================================================
+   2. BRAND ELEMENTS
+   ========================================================================== */
+/* Logo Styling */
+.logo-brand {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-brand::before {
+    content: '';
+    width: 4px;
+    height: 24px;
+    background: var(--gradient-ethiopia);
+    border-radius: 2px;
+}
+
+/* Brand Badges */
+.brand-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: var(--theme-border-radius);
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.brand-badge.accent {
+    background: var(--gradient-accent);
+}
+
+.brand-badge.ethiopia {
+    background: var(--gradient-ethiopia);
+}
+
+/* ==========================================================================
+   3. THEME-SPECIFIC COMPONENTS
+   ========================================================================== */
+/* Enhanced Cards */
+.theme-card {
+    background: white;
+    border-radius: var(--theme-border-radius-lg);
+    border: 1px solid #e2e8f0;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.theme-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-ethiopia);
+}
+
+.theme-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--theme-shadow-lg);
+    border-color: var(--zewed-accent-light);
+}
+
+.theme-card.accent::before {
+    background: var(--gradient-accent);
+}
+
+/* Featured Sections */
+.featured-section {
+    position: relative;
+    padding: 4rem 0;
+    background: linear-gradient(135deg, 
+        rgba(26, 54, 93, 0.02) 0%, 
+        rgba(49, 130, 206, 0.05) 100%);
+}
+
+.featured-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-ethiopia);
+}
+
+/* Ethiopian Pattern Background */
+.ethiopian-pattern {
+    background-image: 
+        linear-gradient(45deg, var(--ethiopia-green) 25%, transparent 25%),
+        linear-gradient(-45deg, var(--ethiopia-green) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, var(--ethiopia-green) 75%),
+        linear-gradient(-45deg, transparent 75%, var(--ethiopia-green) 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    opacity: 0.1;
+}
+
+/* ==========================================================================
+   4. BUTTON VARIATIONS
+   ========================================================================== */
+.btn-theme {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-theme::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-accent);
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.btn-theme:hover::before {
+    left: 0;
+}
+
+.btn-theme.accent {
+    background: var(--gradient-accent);
+}
+
+.btn-theme.accent::before {
+    background: var(--gradient-primary);
+}
+
+.btn-theme.ethiopia {
+    background: var(--gradient-ethiopia);
+}
+
+.btn-theme.ethiopia::before {
+    background: linear-gradient(90deg, 
+        var(--ethiopia-blue) 0%, 
+        var(--ethiopia-red) 33%, 
+        var(--ethiopia-yellow) 66%, 
+        var(--ethiopia-green) 100%);
+}
+
+/* Outline Theme Button */
+.btn-outline-theme {
+    background: transparent;
+    color: var(--zewed-primary);
+    border: 2px solid var(--zewed-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-outline-theme::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.btn-outline-theme:hover {
+    color: white;
+    border-color: transparent;
+}
+
+.btn-outline-theme:hover::before {
+    left: 0;
+}
+
+/* ==========================================================================
+   5. NAVIGATION ENHANCEMENTS
+   ========================================================================== */
+.theme-nav {
+    background: white;
+    box-shadow: var(--theme-shadow-md);
+}
+
+.theme-nav .nav-menu a {
+    position: relative;
+    padding: 0.5rem 1rem;
+    border-radius: var(--theme-border-radius);
+    transition: all 0.2s ease;
+}
+
+.theme-nav .nav-menu a:hover {
+    background: rgba(49, 130, 206, 0.1);
+    color: var(--zewed-accent);
+}
+
+.theme-nav .nav-menu a.active {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+/* Mobile Menu Theme */
+.mobile-menu.theme {
+    background: white;
+    box-shadow: var(--theme-shadow-lg);
+}
+
+.mobile-menu.theme a {
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+}
+
+.mobile-menu.theme a:hover {
+    background: rgba(49, 130, 206, 0.1);
+    color: var(--zewed-accent);
+}
+
+.mobile-menu.theme a.active {
+    background: var(--gradient-primary);
+    color: white;
+    border-color: transparent;
+}
+
+/* ==========================================================================
+   6. FORM STYLING
+   ========================================================================== */
+.theme-form .form-control {
+    border: 2px solid #e2e8f0;
+    border-radius: var(--theme-border-radius);
+    transition: all 0.2s ease;
+}
+
+.theme-form .form-control:focus {
+    border-color: var(--zewed-accent);
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+}
+
+.theme-form .form-label {
+    font-weight: 600;
+    color: var(--zewed-primary);
+}
+
+/* Custom Checkboxes & Radio Buttons */
+.theme-checkbox input[type="checkbox"],
+.theme-radio input[type="radio"] {
+    display: none;
+}
+
+.theme-checkbox label,
+.theme-radio label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.theme-checkbox label::before,
+.theme-radio label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 4px;
+    background: white;
+    transition: all 0.2s ease;
+}
+
+.theme-radio label::before {
+    border-radius: 50%;
+}
+
+.theme-checkbox input[type="checkbox"]:checked + label::before,
+.theme-radio input[type="radio"]:checked + label::before {
+    border-color: var(--zewed-accent);
+    background: var(--zewed-accent);
+}
+
+.theme-checkbox input[type="checkbox"]:checked + label::after {
+    content: '✓';
+    position: absolute;
+    left: 0.25rem;
+    color: white;
+    font-weight: bold;
+}
+
+.theme-radio input[type="radio"]:checked + label::after {
+    content: '';
+    position: absolute;
+    left: 0.5rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    background: white;
+    border-radius: 50%;
+}
+
+/* ==========================================================================
+   7. TYPOGRAPHY ENHANCEMENTS
+   ========================================================================== */
+.theme-heading {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.theme-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-ethiopia);
+    border-radius: 2px;
+}
+
+.theme-heading.center::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.theme-heading.accent::after {
+    background: var(--gradient-accent);
+}
+
+/* Ethiopian Script Support */
+[lang="am"],
+[lang="ti"],
+[lang="om"] {
+    font-family: 'Noto Sans Ethiopic', var(--font-primary);
+}
+
+/* Amharic */
+[lang="am"] {
+    line-height: 1.8;
+}
+
+/* Tigrinya */
+[lang="ti"] {
+    letter-spacing: 0.02em;
+}
+
+/* Oromo */
+[lang="om"] {
+    font-size: 1.05em;
+}
+
+/* ==========================================================================
+   8. HERO SECTION THEME
+   ========================================================================== */
+.theme-hero {
+    background: var(--gradient-primary),
+                linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('../assets/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, 
+                rgba(49, 130, 206, 0.3) 0%, 
+                transparent 50%);
+}
+
+.theme-hero .hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Ethiopian Flag Accent */
+.ethiopian-flag-accent {
+    position: relative;
+    padding-left: 1rem;
+}
+
+.ethiopian-flag-accent::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--gradient-ethiopia);
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   9. FEATURES THEME
+   ========================================================================== */
+.theme-feature {
+    text-align: center;
+    padding: 2rem;
+    border-radius: var(--theme-border-radius-lg);
+    background: white;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-feature::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+.theme-feature:hover::before {
+    transform: translateY(0);
+}
+
+.theme-feature:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--theme-shadow-lg);
+}
+
+.theme-feature-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, 
+                var(--zewed-primary) 0%, 
+                var(--zewed-accent) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    position: relative;
+}
+
+.theme-feature-icon::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 50%;
+    border: 2px solid var(--zewed-accent-light);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.theme-feature:hover .theme-feature-icon::after {
+    opacity: 1;
+}
+
+/* ==========================================================================
+   10. TESTIMONIAL THEME
+   ========================================================================== */
+.theme-testimonial {
+    background: white;
+    border-radius: var(--theme-border-radius-lg);
+    padding: 2rem;
+    border: 1px solid #e2e8f0;
+    position: relative;
+    box-shadow: var(--theme-shadow-md);
+}
+
+.theme-testimonial::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: 2rem;
+    font-size: 4rem;
+    color: var(--zewed-accent-light);
+    font-family: Georgia, serif;
+    line-height: 1;
+}
+
+.theme-testimonial-content {
+    font-style: italic;
+    color: var(--zewed-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.theme-testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--zewed-accent-light);
+}
+
+.author-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.author-info h4 {
+    margin: 0;
+    color: var(--zewed-primary);
+    font-size: 1rem;
+}
+
+.author-info p {
+    margin: 0;
+    color: var(--light-gray);
+    font-size: 0.875rem;
+}
+
+/* ==========================================================================
+   11. FOOTER THEME
+   ========================================================================== */
+.theme-footer {
+    background: var(--gradient-primary);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-ethiopia);
+}
+
+.footer-links-theme a {
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-links-theme a:hover {
+    color: white;
+    transform: translateX(4px);
+}
+
+.footer-links-theme a::before {
+    content: '→';
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.footer-links-theme a:hover::before {
+    opacity: 1;
+}
+
+/* ==========================================================================
+   12. ANIMATIONS & TRANSITIONS
+   ========================================================================== */
+@keyframes themePulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(49, 130, 206, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(49, 130, 206, 0);
+    }
+}
+
+@keyframes slideInEthiopia {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.theme-pulse {
+    animation: themePulse 2s infinite;
+}
+
+.slide-in-ethiopia {
+    animation: slideInEthiopia 1s ease-out;
+}
+
+.float-animation {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* ==========================================================================
+   13. SPECIAL EFFECTS
+   ========================================================================== */
+/* Glowing effect */
+.glow-effect {
+    position: relative;
+}
+
+.glow-effect::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--gradient-accent);
+    border-radius: inherit;
+    z-index: -1;
+    filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.glow-effect:hover::after {
+    opacity: 0.6;
+}
+
+/* Ethiopian pattern overlay */
+.pattern-overlay {
+    position: relative;
+}
+
+.pattern-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 80%, var(--ethiopia-green) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, var(--ethiopia-yellow) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, var(--ethiopia-red) 0%, transparent 50%),
+        radial-gradient(circle at 60% 60%, var(--ethiopia-blue) 0%, transparent 50%);
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   14. RESPONSIVE THEME ADJUSTMENTS
+   ========================================================================== */
+@media (max-width: 768px) {
+    .theme-hero {
+        background: var(--gradient-primary);
+        padding: 3rem 1rem;
+    }
+    
+    .theme-feature {
+        padding: 1.5rem;
+    }
+    
+    .theme-feature-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .theme-testimonial {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .theme-heading::after {
+        width: 40px;
+    }
+    
+    .brand-badge {
+        font-size: 0.625rem;
+        padding: 0.125rem 0.5rem;
+    }
+}
+
+/* ==========================================================================
+   15. PRINT STYLES FOR THEME
+   ========================================================================== */
+@media print {
+    .theme-hero {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .theme-card::before {
+        display: none;
+    }
+    
+    .btn-theme,
+    .btn-outline-theme {
+        background: white !important;
+        color: black !important;
+        border: 1px solid black !important;
+    }
+    
+    .glow-effect::after,
+    .pattern-overlay::before {
+        display: none;
+    }
+}
+
+/* ==========================================================================
+   16. DARK MODE THEME
+   ========================================================================== */
+@media (prefers-color-scheme: dark) {
+    .theme-card {
+        background: #2d3748;
+        border-color: #4a5568;
+    }
+    
+    .theme-feature {
+        background: #2d3748;
+        border-color: #4a5568;
+    }
+    
+    .theme-testimonial {
+        background: #2d3748;
+        border-color: #4a5568;
+    }
+    
+    .theme-testimonial-content {
+        color: #e2e8f0;
+    }
+    
+    .theme-form .form-control {
+        background: #2d3748;
+        border-color: #4a5568;
+        color: #e2e8f0;
+    }
+    
+    .theme-checkbox label::before,
+    .theme-radio label::before {
+        background: #2d3748;
+        border-color: #4a5568;
+    }
+}
+
+/* ==========================================================================
+   17. ACCESSIBILITY ENHANCEMENTS
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+    .theme-feature,
+    .theme-card,
+    .btn-theme,
+    .btn-outline-theme {
+        transition: none;
+    }
+    
+    .theme-feature:hover,
+    .theme-card:hover {
+        transform: none;
+    }
+    
+    .float-animation,
+    .theme-pulse {
+        animation: none;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    :root {
+        --zewed-primary: #000080;
+        --zewed-accent: #0000ff;
+        --ethiopia-green: #006400;
+        --ethiopia-yellow: #808000;
+        --ethiopia-red: #800000;
+        --ethiopia-blue: #000080;
+    }
+    
+    .theme-card,
+    .theme-feature,
+    .theme-testimonial {
+        border: 2px solid black;
+    }
+    
+    .btn-theme,
+    .btn-outline-theme {
+        border: 2px solid black;
+    }
+}
